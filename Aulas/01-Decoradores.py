@@ -155,7 +155,7 @@ print(resultado)
 # Usando functools para alterar o nome da função
 
 def apresentacao(funcao):
-    @functools.wraps(funcao) # Essa função é responsável por manter os parâmetros e o nome correto da função. (instropecção)
+    @functools.wraps(funcao) # Essa função é responsável por manter os parâmetros e o nome correto da função (instropecção)
     def nome(*args, **kwargs):
         print("Qual é o seu nome?")
         resultado = funcao(*args, **kwargs)
