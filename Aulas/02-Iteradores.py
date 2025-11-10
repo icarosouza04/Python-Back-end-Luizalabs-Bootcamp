@@ -1,3 +1,5 @@
+# Iteradores
+
 import os
 
 class JogosFavoritos: # Usei o Chat-GPT para me auxiliar a encontrar o arquivo (O arquivo não estava sendo encontrado)
