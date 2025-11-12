@@ -31,13 +31,40 @@
 # file.write("Olá, mundo!") # Para escrever algo no arquivo
 # file.close() # Para fechar o arquivo
 
-arquivo = open(
-    r"C:\Users\Icaro Souza\Documents\Local_GitHub\Python-Back-end-Luizalabs-Bootcamp\Aulas\Meus_personagens_favoritos.txt",
-    "w"
-)
+# arquivo = open(
+#     r"C:\Users\Icaro Souza\Documents\Local_GitHub\Python-Back-end-Luizalabs-Bootcamp\Aulas\Meus_personagens_favoritos.txt",
+#     "w"
+# )
 
-arquivo.write("Ma Chao") # Escreve o conteúdo no arquivo (recomendado para textos grandes)
-arquivo.writelines(["\n", "Keiji Maeda", "\n", "Yoshitsune Minamoto", "\n", "Naomasa Li", "\n", "Kuro", "\n",
-                    "Godfrey", "\n", "Fera Clerical", "\n", "Kratos", "\n", "Kassandra", "\n", "Jin Sakai"])
-                   # Escreve o conteúdo no arquivo (um por vez)
-arquivo.close()
+# arquivo.write("Ma Chao") # Escreve o conteúdo no arquivo (recomendado para textos grandes)
+# arquivo.writelines(["\n", "Keiji Maeda", "\n", "Yoshitsune Minamoto", "\n", "Naomasa Li", "\n", "Kuro", "\n",
+#                     "Godfrey", "\n", "Fera Clerical", "\n", "Kratos", "\n", "Kassandra", "\n", "Jin Sakai"])
+#                    # Escreve o conteúdo no arquivo (um por vez)
+# arquivo.close()
+
+# Gerenciando arquivos e diretórios
+
+import os
+import shutil
+from pathlib import Path # Biblioteca para facilitar a identificação do caminho
+
+ROOT_PATH = Path(__file__).parent
+
+# os.mkdir("Exemplo") # Cria um diretório
+
+# os.rename("Exemplo.txt", "Novo_exemplo.txt") # Renomeia o diretório
+
+# os.remove("Novo_exemplo.txt") # Remove um arquivo
+
+# shutil.move("Exemplo.txt", "Novo_exemplo.txt") # Mover um arquivo
+
+# os.mkdir(ROOT_PATH / "Arquivos")
+
+# arquivo2 = open("Novo_arquivo.txt" "w")
+# arquivo2.close()
+
+# os.rename(ROOT_PATH / "Novo_arquivo.txt", ROOT_PATH / "Arquivo_definitivo.txt")
+
+# os.remove(ROOT_PATH / "Arquivo_definitivo.txt")
+
+shutil.move(ROOT_PATH / "Meus_personagens_favoritos.txt", ROOT_PATH / "Arquivos" / "Meus_personagens_favoritos.txt")
