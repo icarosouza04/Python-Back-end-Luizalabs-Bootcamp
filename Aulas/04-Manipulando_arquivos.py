@@ -48,7 +48,7 @@ import os
 import shutil
 from pathlib import Path # Biblioteca para facilitar a identificação do caminho
 
-ROOT_PATH = Path(__file__).parent
+ROOT_PATH = Path(__file__).parent # __file__ representa o caminho do arquivo
 
 # os.mkdir("Exemplo") # Cria um diretório
 
@@ -67,4 +67,44 @@ ROOT_PATH = Path(__file__).parent
 
 # os.remove(ROOT_PATH / "Arquivo_definitivo.txt")
 
-shutil.move(ROOT_PATH / "Meus_personagens_favoritos.txt", ROOT_PATH / "Arquivos" / "Meus_personagens_favoritos.txt")
+# shutil.move(ROOT_PATH / "Meus_personagens_favoritos.txt", ROOT_PATH / "Arquivos" / "Meus_personagens_favoritos.txt")
+
+# Tratamento de exceções em manipulação de arquivos
+
+# try:
+#     arquivo = open(ROOT_PATH / "Arquivos")
+# except FileNotFoundError as exc:
+#     print(f"Este arquivo não existe. {exc}")
+# except IsADirectoryError as exc:
+#     print(f"Não foi possível encontrar o caminho deste arquivo. {exc}")
+# except IOError as exc:
+#     print(f"Erro ao abrir o arquivo. {exc}")
+# except Exception as exc:
+#     print(f"Algum problema ocorreu ao tentar abrir o arquivo. {exc}")
+
+# Boas práticas na manipulação de arquivos
+
+# with open(ROOT_PATH / "Arquivos" / "Meus_personagens_favoritos.txt", "r") as arquivo:
+#     print(f"Lendo o arquivo: {arquivo}")
+#     print(arquivo.read())
+
+# try:
+#     with open(ROOT_PATH / "Arquivos" / "Meus_personagens_favoritos.txt", "r") as arquivo:
+#         print(f"Lendo o arquivo: {arquivo}")
+#         print(arquivo.read())
+# except IOError as erro:
+#     print(f"Erro ao abrir o arquivo.\n{erro}")
+
+# try:
+#     with open(ROOT_PATH / "Arquivos" / "Arquivo_utf-8.txt", "w", encoding = "utf-8") as arquivo:
+#         arquivo.write(f"Aprendendo a manipular arquivos utilizando o Python.")
+# except IOError as erro:
+#     print(f"Erro ao abrir o arquivo.\n{erro}")
+
+try:
+    with open(ROOT_PATH / "Arquivos" / "Arquivo_utf-8.txt", "r", encoding = "ascii") as arquivo:
+        print(arquivo.read())
+except IOError as erro:
+    print(f"Erro ao abrir o arquivo.\n{erro}")
+except UnicodeDecodeError as erro:
+    print(f"Não foi possível abrir o arquivo. Há um caractere não compatível com o modelo de abertura.\n{erro}")
