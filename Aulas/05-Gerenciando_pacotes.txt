@@ -1,0 +1,57 @@
+# Criar um ambiente virtual
+
+pypi.org # Site para encontrar, instalar e publicar pacotes
+
+python3 -m venv myenv (ou nome do projeto) # Criar o ambiente
+source myenv/bin/activate # Ativar o ambiente
+deactivate # Desativar o ambiente virtual
+
+# Comandos pip
+
+pip install nome_do_pacote # Instalar um pacote
+
+pip uninstall nome_do_pacote # Desinstalar um pacote
+
+pip list # Listar pacotes instalados
+
+pip install --upgrade nome_do_pacote # Atualizar um pacote
+
+# Gerenciando dependências com Pipenv
+
+pip install pipenv
+pipenv install numpy
+pipenv uninstall numpy
+pipenv lock
+pipenv graph
+pipenv clean
+
+# Gerenciando dependências com Poetry
+
+pip install poetry
+poetry new myproject
+cd myproject
+poetry add numpy
+poetry remove numpy
+poetry show -t
+
+# Boas práticas com Python
+
+Principais recomendações:
+- 4 espaços para identação
+- Limitar as linhas a 79 caracteres(na época)
+- Usar nomes de variáveis em `snake_case` para funções e variáveis, e `CamelCase` para classes
+
+Utilizando o flake8 para verificar padrão
+
+pip install flake8
+flake8 meu_script.py
+
+Utilizando o black para formatar o código
+
+pip install black
+black meu_script.py
+
+Utilizando o isort para formatar os imports do código
+
+pip install isort
+isort meu_script.py
