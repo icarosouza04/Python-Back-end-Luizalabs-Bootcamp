@@ -11,7 +11,7 @@ app = Flask(__name__)
 def create_user():
     new_user = request.json
     # Lógica para criar o usuário
-    return jsonify([{"message": "Uusário criado com sucesso!"}]), 201
+    return jsonify([{"message": "Usuário criado com sucesso!"}]), 201
 
 
 if __name__ == "__main__":

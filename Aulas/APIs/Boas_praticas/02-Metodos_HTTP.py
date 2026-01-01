@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
 
 novo_usuario = {"nome": "João", "idade": 30}
-response = request.post("https: //api.exemplo.com/usuarios/1", json = novo_usuario)
+response = request.post("https://api.exemplo.com/usuarios/1", json = novo_usuario)
 
 print(response.json())
 
@@ -37,13 +37,13 @@ print(response.json())
 #     PATCH realiza uma atualização parcial, alterando apenas os campos especificados.
 
 atualizacao_usuario = {"idade": 31} # Método PATCH
-response = request.patch("https: //api.exemplo.com/usuarios/1", json = atualizacao_usuario)
+response = request.patch("https://api.exemplo.com/usuarios/1", json = atualizacao_usuario)
 
 
 # 4 - DELETE: Excluir Recursos
 # O método DELETE é usado para remover um recurso específico do servidor.
 
-response = request.delete("https: //api.exemplo.com/usuarios/1") # Método DELETE
+response = request.delete("https://api.exemplo.com/usuarios/1") # Método DELETE
 
 print(response.json())
 
