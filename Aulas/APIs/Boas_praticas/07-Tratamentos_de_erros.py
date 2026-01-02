@@ -19,3 +19,8 @@ def bad_request(error):
 
 if __name__ == "__main__":
     app.run(port = 3000)
+
+
+# 200 OK: Sucesso, o servidor cumpriu sua parte e entregou o que foi solicitado.
+# 400 Bad Request: A requisição não foi entendida devido a um erro do cliente.
+# 404 Not Found: O recurso solicitado não foi encontrado no servidor.
