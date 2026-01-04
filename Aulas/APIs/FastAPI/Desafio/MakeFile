@@ -1,0 +1,2 @@
+run:
+	@uvicorn Aulas.APIs.FastAPI.Desafio.main:app --reload
