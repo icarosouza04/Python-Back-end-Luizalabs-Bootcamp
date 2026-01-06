@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:11-alpine
+    environment:
+      POSTGRES_PASSWORD: desafio
+      POSTGRES_USER: desafio
+      POSTGRES_DB: desafio
+    ports:
+      - "5432:5432"
