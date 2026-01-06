@@ -1,4 +1,6 @@
+from Aulas.APIs.FastAPI.Desafio.centro_treinamento.schemas import CentroTreinamentoAtleta
 from Aulas.APIs.FastAPI.Desafio.contrib.schemas import BaseSchema, OutMixin
+from Aulas.APIs.FastAPI.Desafio.categorias.schemas import CategoriaIn
 from pydantic import BaseModel, Field, PositiveFloat
 from typing import Annotated
 
@@ -9,6 +11,8 @@ class Atleta(BaseSchema):
     peso: Annotated[PositiveFloat, Field(description = "Peso do atleta", example = "70.1")]
     altura: Annotated[PositiveFloat, Field(description = "Altura do atleta", example = "1.73")]
     sexo: Annotated[str, Field(description = "Sexo do atleta", example = "M", max_length = 1)]
+    categoria: Annotated[CategoriaIn, Field(description = "Categoria do atleta")]
+    centro_treinamento: Annotated[CentroTreinamentoAtleta, Field(description = "Centro de treinamento do atleta")]
 
 class AtletaIn(Atleta):
     pass
