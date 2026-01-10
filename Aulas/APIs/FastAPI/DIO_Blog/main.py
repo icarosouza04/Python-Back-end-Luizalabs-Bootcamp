@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from controllers import post  
+from Aulas.APIs.FastAPI.DIO_Blog.controllers import auth, post
 from contextlib import asynccontextmanager
 from Aulas.APIs.FastAPI.DIO_Blog.database import database, metadata, engine
 
@@ -12,6 +12,6 @@ async def lifespan(app: FastAPI):
     yield
     await database.disconnect()
 
-app = FastAPI(lifespan = None)
+app = FastAPI(lifespan=lifespan)
 app.include_router(post.router)
-
+app.include_router(auth.router)

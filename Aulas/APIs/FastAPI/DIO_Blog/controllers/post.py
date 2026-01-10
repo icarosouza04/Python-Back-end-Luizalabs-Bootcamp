@@ -1,11 +1,12 @@
-from fastapi import status, APIRouter
+from fastapi import Depends, status, APIRouter
+from Aulas.APIs.FastAPI.DIO_Blog.security import login_required
 from Aulas.APIs.FastAPI.DIO_Blog.services.post import PostService
-from schemas.post import PostIn, PostUpdateIn
-from views.post import PostOut
+from Aulas.APIs.FastAPI.DIO_Blog.schemas.post import PostIn, PostUpdateIn
+from Aulas.APIs.FastAPI.DIO_Blog.views.post import PostOut
 from Aulas.APIs.FastAPI.DIO_Blog.models.post import posts
 from Aulas.APIs.FastAPI.DIO_Blog.database import database
 
-router = APIRouter(prefix = "/posts")
+router = APIRouter(prefix = "/posts", dependencies = [Depends(login_required)])
 
 service = PostService()
 
