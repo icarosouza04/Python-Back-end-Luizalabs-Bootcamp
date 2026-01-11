@@ -1,8 +1,8 @@
-from Aulas.APIs.FastAPI.DIO_Blog.database import database
+from Aulas.APIs.FastAPI.DIO_Blog.src.database import database
 from databases.interfaces import Record
 from fastapi import HTTPException, status
-from Aulas.APIs.FastAPI.DIO_Blog.models.post import posts
-from Aulas.APIs.FastAPI.DIO_Blog.schemas.post import PostIn, PostUpdateIn
+from Aulas.APIs.FastAPI.DIO_Blog.src.models.post import posts
+from Aulas.APIs.FastAPI.DIO_Blog.src.schemas.post import PostIn, PostUpdateIn
 
 class PostService:
     async def read_all(self, published: bool, limit: int, skip: int = 0) -> list[Record]:

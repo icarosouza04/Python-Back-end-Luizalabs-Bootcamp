@@ -1,11 +1,11 @@
 from fastapi import FastAPI
-from Aulas.APIs.FastAPI.DIO_Blog.controllers import auth, post
+from Aulas.APIs.FastAPI.DIO_Blog.src.controllers import auth, post
 from contextlib import asynccontextmanager
-from Aulas.APIs.FastAPI.DIO_Blog.database import database, metadata, engine
+from Aulas.APIs.FastAPI.DIO_Blog.src.database import database, metadata, engine
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    from Aulas.APIs.FastAPI.DIO_Blog.models.post import posts # noqa
+    from Aulas.APIs.FastAPI.DIO_Blog.src.models.post import posts # noqa
 
     await database.connect()
     metadata.create_all(engine)

@@ -1,10 +1,10 @@
 from fastapi import Depends, status, APIRouter
-from Aulas.APIs.FastAPI.DIO_Blog.security import login_required
-from Aulas.APIs.FastAPI.DIO_Blog.services.post import PostService
-from Aulas.APIs.FastAPI.DIO_Blog.schemas.post import PostIn, PostUpdateIn
-from Aulas.APIs.FastAPI.DIO_Blog.views.post import PostOut
-from Aulas.APIs.FastAPI.DIO_Blog.models.post import posts
-from Aulas.APIs.FastAPI.DIO_Blog.database import database
+from Aulas.APIs.FastAPI.DIO_Blog.src.security import login_required
+from Aulas.APIs.FastAPI.DIO_Blog.src.services.post import PostService
+from Aulas.APIs.FastAPI.DIO_Blog.src.schemas.post import PostIn, PostUpdateIn
+from Aulas.APIs.FastAPI.DIO_Blog.src.views.post import PostOut
+from Aulas.APIs.FastAPI.DIO_Blog.src.models.post import posts
+from Aulas.APIs.FastAPI.DIO_Blog.src.database import database
 
 router = APIRouter(prefix = "/posts", dependencies = [Depends(login_required)])
 
